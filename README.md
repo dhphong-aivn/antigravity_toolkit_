@@ -1,146 +1,85 @@
-# Antigravity Kit
+# Antigravity Kit (Custom Developer Edition)
 
-> AI Agent templates with Skills, Agents, and Workflows
+> 🚀 AI Agent templates enhanced with strict behavioral rules, customized Skills, and optimized Workflows for advanced AI-assisted development.
 
-<div  align="center">
-    <a href="https://unikorn.vn/p/antigravity-kit?ref=unikorn" target="_blank"><img src="https://unikorn.vn/api/widgets/badge/antigravity-kit?theme=dark" alt="Antigravity Kit - Nổi bật trên Unikorn.vn" style="width: 210px; height: 54px;" width="210" height="54" /></a>
-    <a href="https://unikorn.vn/p/antigravity-kit?ref=unikorn" target="_blank"><img src="https://unikorn.vn/api/widgets/badge/antigravity-kit/rank?theme=dark&type=daily" alt="Antigravity Kit - Hàng ngày" style="width: 250px; height: 64px;" width="250" height="64" /></a>
-    <a href="https://launch.j2team.dev/products/antigravity-kit" target="_blank"><img src="https://launch.j2team.dev/badge/antigravity-kit/dark" alt="Antigravity Kit on J2TEAM Launch" width="250" height="54" /></a>
-</div>
+**Credit & Origin:** This is a customized version tailored for specific development flows. The original toolkit repository was created by the author **vudovn** (Original project: [Antigravity Kit](https://unikorn.vn/p/antigravity-kit)).
 
-## Quick Install
+---
 
-```bash
-npx @vudovn/ag-kit init
-```
+## 🎯 What's New in This Custom Version
 
-Or install globally:
+This developer edition introduces additional strict enforcement rules and principles (inspired by Karpathy and Addy Osmani) to minimize AI hallucinations and maximize code quality:
 
-```bash
-npm install -g @vudovn/ag-kit
-ag-kit init
-```
+- **Anti-Rationalization Engine:** Prevents the AI from making excuses (e.g., "I'll fix tests later") or bypassing essential quality gates.
+- **Surgical Changes Protocol:** Enforces minimal, strictly necessary code diffs without risky "drive-by" refactoring.
+- **Goal-Driven Execution:** Forces validation loops before the AI can confirm a task is completed.
+- **Source-Driven Development:** Requires the AI to fetch official framework documentation (React 19, Next.js 15, etc.) instead of relying on outdated training memory.
+- **Context Engineering:** Strictly limits context bloating to keep the AI focused and accurate.
 
-This installs the `.agent` folder containing all templates into your project.
+---
 
-### ⚠️ Important Note on `.gitignore`
-If you are using AI-powered editors like **Cursor** or **Windsurf**, adding the `.agent/` folder to your `.gitignore` may prevent the IDE from indexing the workflows. This results in slash commands (like `/plan`, `/debug`) not appearing in the chat suggestion dropdown.
+## 📦 Quick Install (Custom Edition)
 
-**Recommended Solution:**
-To keep the `.agent/` folder local (not tracked by Git) while maintaining AI functionality:
-1. Ensure `.agent/` is **NOT** in your project's `.gitignore`.
-2. Instead, add it to your local exclude file: `.git/info/exclude`
-
-## What's Included
-
-| Component     | Count | Description                                                        |
-| ------------- | ----- | ------------------------------------------------------------------ |
-| **Agents**    | 20    | Specialist AI personas (frontend, backend, security, PM, QA, etc.) |
-| **Skills**    | 37    | Domain-specific knowledge modules                                  |
-| **Workflows** | 11    | Slash command procedures                                           |
-| **Modern ES** | 2026+ | **Next.js 16 & React 19 Native** (Cache Components, PPR, Proxy)    |
-
-
-## Usage
-
-### Using Agents
-
-**No need to mention agents explicitly!** The system automatically detects and applies the right specialist(s):
-
-```
-You: "Add JWT authentication"
-AI: 🤖 Applying @security-auditor + @backend-specialist...
-
-You: "Fix the dark mode button"
-AI: 🤖 Using @frontend-specialist...
-
-You: "Login returns 500 error"
-AI: 🤖 Using @debugger for systematic analysis...
-```
-
-**How it works:**
-
-- Analyzes your request silently
-
-- Detects domain(s) automatically (frontend, backend, security, etc.)
-- Selects the best specialist(s)
-- Informs you which expertise is being applied
-- You get specialist-level responses without needing to know the system architecture
-
-**Benefits:**
-
-- ✅ Zero learning curve - just describe what you need
-- ✅ Always get expert responses
-- ✅ Transparent - shows which agent is being used
-- ✅ Can still override by mentioning agent explicitly
-
-### Using Workflows
-
-Invoke workflows with slash commands:
-
-| Command          | Description                           |
-| ---------------- | ------------------------------------- |
-| `/brainstorm`    | Explore options before implementation |
-| `/create`        | Create new features or apps           |
-| `/debug`         | Systematic debugging                  |
-| `/deploy`        | Deploy application                    |
-| `/enhance`       | Improve existing code                 |
-| `/orchestrate`   | Multi-agent coordination              |
-| `/plan`          | Create task breakdown                 |
-| `/preview`       | Preview changes locally               |
-| `/status`        | Check project status                  |
-| `/test`          | Generate and run tests                |
-| `/ui-ux-pro-max` | Design with 50 styles                 |
-
-Example:
-
-```
-/brainstorm authentication system
-/create landing page with hero section
-/debug why login fails
-```
-
-### Using Skills
-
-Skills are loaded automatically based on task context. The AI reads skill descriptions and applies relevant knowledge.
-
-## CLI Tool
-
-| Command         | Description                               |
-| --------------- | ----------------------------------------- |
-| `ag-kit init`   | Install `.agent` folder into your project |
-| `ag-kit update` | Update to the latest version              |
-| `ag-kit status` | Check installation status                 |
-
-### Options
+Bởi vì đây là phiên bản cá nhân hóa (Origin), bạn không dùng `npx` như bộ gốc. Để mang bộ kỹ năng này áp dụng cho bất kỳ project mới nào của bạn:
 
 ```bash
-ag-kit init --force        # Overwrite existing .agent folder
-ag-kit init --path ./myapp # Install in specific directory
-ag-kit init --branch dev   # Use specific branch
-ag-kit init --quiet        # Suppress output (for CI/CD)
-ag-kit init --dry-run      # Preview actions without executing
+# 1. Clone repo chứa bộ Toolkit tùy chỉnh của bạn về máy
+git clone https://github.com/your-username/your-repo-name.git
+
+# 2. Copy toàn bộ thư mục lõi vào trong project mới mà bạn muốn làm việc
+cp -r your-repo-name/.agents /path/to/your/new-project/
 ```
 
-## Documentation
+> **⚠️ Lưu ý quan trọng cho Cursor / Windsurf:**
+> Đảm bảo rằng thư mục `.agents` **KHÔNG** nằm trong file `.gitignore` của project mới. Hãy đưa nó vào `.git/info/exclude` để IDE có thể index được hệ thống các lệnh `/slash`.
 
-- **[Web App Example](https://antigravity-kit.unikorn.vn/docs/guide/examples/brainstorm)** - Step-by-step guide to creating a web application
-- **[Online Docs](https://antigravity-kit.unikorn.vn/docs)** - Browse all documentation online
+---
 
-## Buy me coffee
+## 📋 Toolkit Structure
 
-<p align="center">
-  <a href="https://buymeacoffee.com/vudovn">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
-  </a>
-</p>
+The toolkit operates through a robust taxonomy of instructions:
 
-<p align="center"> - or - </p>
+| Component | Count | Function |
+| :--- | :---: | :--- |
+| **Agents** | 20 | Specialist AI personas with distinct boundaries (e.g., `frontend-specialist`, `database-architect`, `security-auditor`). |
+| **Skills** | 38 | Domain-specific knowledge modules that agents equip dynamically (e.g., `clean-code`, `testing-patterns`). |
+| **Workflows** | 14 | Standardized operational procedures via slash commands. |
 
-<p align="center">
-  <img src="https://img.vietqr.io/image/mbbank-0779440918-compact.jpg" alt="Buy me coffee" width="200" />
-</p>
+## ⚙️ Intelligent Routing (How it works)
 
-## License
+You do not need to manually explicitly mention agents for every task. The core engine (`GEMINI.md` / `intelligent-routing`) automatically detects your intent:
 
-MIT © Vudovn
+```text
+User: "Refactor the database schema to support many-to-many users and roles."
+AI: 🤖 Applying knowledge of @database-architect + @clean-code...
+```
+
+1. **Domain Detection:** Silently analyzes if the request belongs to Frontend, Backend, DevOps, or QA.
+2. **Modular Skill Injection:** Loads only the requested rules, keeping the AI's context window extremely clean.
+3. **Mandatory Socratic Gate:** If a request is vague, the AI will refuse to code and ask clarifying questions first.
+
+## 🚀 Workflows (Slash Commands)
+
+Use standard slash commands to trigger structured AI processes:
+
+| Command | Lifecycle Phase | Purpose |
+|---------|-----------------|---------|
+| `/brainstorm` | Discovery | Socratic discovery and clarification before building. |
+| `/spec` | Planning | Write technical specifications and constraints. |
+| `/plan` | Planning | Generate an actionable checklist and architecture plan. |
+| `/create` | Execution | Generate a new feature or full project from scratch. |
+| `/review` | Validation | Perform a 5-axis code review on existing code. |
+| `/debug` | Maintenance | Systematic debugging and root-cause analysis. |
+
+## 🛠 Script Verifications
+
+Instead of trusting the AI's "word" that code works, this toolkit forces agents to use Python validation scripts to empirically prove success:
+
+- `test_runner.py` / `lint_runner.py` (Functional checks)
+- `security_scan.py` / `schema_validator.py` (Structural checks)
+- `ux_audit.py` / `accessibility_checker.py` (UI/UX checks)
+
+---
+## ⚖️ License
+
+Original core logic and boilerplate by **Vudovn** under the MIT License. Custom extensions maintain the same spirit of open developer tooling.
