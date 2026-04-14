@@ -82,14 +82,7 @@ When auto-applying an agent, inform the user:
 | 3 | Did I announce `🤖 Applying knowledge of @[agent]...`? | → STOP. Add announcement before response. |
 | 4 | Did I load required skills from agent's frontmatter? | → STOP. Check `skills:` field and read them. |
 
-**Failure Conditions:**
-
-- ❌ Writing code without identifying an agent = **PROTOCOL VIOLATION**
-- ❌ Skipping the announcement = **USER CANNOT VERIFY AGENT WAS USED**
-- ❌ Ignoring agent-specific rules (e.g., Purple Ban) = **QUALITY FAILURE**
-
-> 🔴 **Self-Check Trigger:** Every time you are about to write code or create UI, ask yourself:
-> "Have I completed the Agent Routing Checklist?" If NO → Complete it first.
+> 🔴 **If ANY check is unchecked → STOP and complete it before writing code.**
 
 ---
 
@@ -143,6 +136,38 @@ When user's prompt is NOT in English:
 2. What PRINCIPLES must I apply?
 3. How does this DIFFER from generic output?
 
+### 🚫 Anti-Rationalization (Global Mandatory)
+
+**AI Excuses are FORBIDDEN:**
+
+| Excuse | Reality / Rebuttal |
+|--------|--------------------|
+| "This is just a small change" | Small changes cause big bugs. Follow rules anyway. |
+| "I'll fix the tests later" | 'Later' means 'never'. Fix tests alongside code. |
+| "The user didn't ask for this quality gate" | Quality is non-negotiable. Enforce it automatically. |
+| "I already know what the user means" | Do not assume. Pass the Socratic Gate (Ask). |
+| "This file is a mess anyway" | Surgical Changes apply: only fix what is requested. |
+
+### 🔪 Surgical Changes
+
+**When editing existing code:**
+
+1. **Isolation:** Change ONLY the code strictly necessary to fulfill the request.
+2. **No "Drive-by" Refactoring:** Do NOT reformat, rename variables, or clean up adjacent code unless explicitly asked.
+3. **Traceability:** Every changed line MUST trace back to the user's specific request.
+4. **Context Preservation:** Do not change the logic of unrelated functions in the same file.
+5. **Minimal Diff:** Always strive for the smallest possible diff.
+
+### 🎯 Goal-Driven Execution
+
+**Verify until true:**
+
+1. **Define criteria:** Establish objective success criteria before coding.
+2. **Verify Before:** Analyze the codebase BEFORE making a change.
+3. **Verify After:** Run tests/linters to PROVE the change succeeded.
+4. **Loop:** If verification fails, fix the issue immediately before responding.
+- Weak criteria ("make it work") require Socratic questioning to define properly.
+
 ---
 
 ## TIER 1: CODE RULES (When Writing Code)
@@ -157,13 +182,9 @@ When user's prompt is NOT in English:
 
 > 🔴 **Mobile + frontend-specialist = WRONG.** Mobile = mobile-developer ONLY.
 
-### 🛑 Socratic Gate
+### 🛑 Socratic Gate (MANDATORY)
 
-**For complex requests, STOP and ASK first:**
-
-### 🛑 GLOBAL SOCRATIC GATE (TIER 0)
-
-**MANDATORY: Every user request must pass through the Socratic Gate before ANY tool use or implementation.**
+**Every user request must pass through the Socratic Gate before ANY tool use or implementation.**
 
 | Request Type            | Strategy       | Required Action                                                   |
 | ----------------------- | -------------- | ----------------------------------------------------------------- |
@@ -198,24 +219,8 @@ When user's prompt is NOT in English:
 - **Completion:** A task is NOT finished until `checklist.py` returns success.
 - **Reporting:** If it fails, fix the **Critical** blockers first (Security/Lint).
 
-**Available Scripts (12 total):**
-
-| Script                     | Skill                 | When to Use         |
-| -------------------------- | --------------------- | ------------------- |
-| `security_scan.py`         | vulnerability-scanner | Always on deploy    |
-| `dependency_analyzer.py`   | vulnerability-scanner | Weekly / Deploy     |
-| `lint_runner.py`           | lint-and-validate     | Every code change   |
-| `test_runner.py`           | testing-patterns      | After logic change  |
-| `schema_validator.py`      | database-design       | After DB change     |
-| `ux_audit.py`              | frontend-design       | After UI change     |
-| `accessibility_checker.py` | frontend-design       | After UI change     |
-| `seo_checker.py`           | seo-fundamentals      | After page change   |
-| `bundle_analyzer.py`       | performance-profiling | Before deploy       |
-| `mobile_audit.py`          | mobile-design         | After mobile change |
-| `lighthouse_audit.py`      | performance-profiling | Before deploy       |
-| `playwright_runner.py`     | webapp-testing        | Before deploy       |
-
-> 🔴 **Agents & Skills can invoke ANY script** via `python .agent/skills/<skill>/scripts/<script>.py`
+> 📋 **Full script list (12 scripts):** See `ARCHITECTURE.md` → Scripts section.
+> Invoke via: `python .agent/skills/<skill>/scripts/<script>.py`
 
 ### 🎭 Gemini Mode Mapping
 

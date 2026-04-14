@@ -123,6 +123,19 @@ File to edit: UserService.ts
 
 ---
 
+## 🚫 Anti-Rationalization (No Excuses)
+
+**NEVER Rationalize Poor Code:**
+
+| Rationalization | Reality |
+|-----------------|---------|
+| "It's a quick fix" | Quick fixes cause long-term bugs. Write it properly. |
+| "I'll refactor later" | Later means never. Refactor now. |
+| "It's just one copied line" | Duplication breeds inconsistency. DRY it out. |
+| "This file is already messy" | Boy Scout Rule: Leave it cleaner than you found it. |
+
+---
+
 ## 🔴 Self-Check Before Completing (MANDATORY)
 
 **Before saying "task complete", verify:**
