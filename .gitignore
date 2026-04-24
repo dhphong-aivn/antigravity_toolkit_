@@ -4,3 +4,9 @@ node_modules/
 antigravity-doc
 tests
 others
+# Junctions (symlinks)
+/skills
+/agents
+/workflows
+/rules
+/scripts

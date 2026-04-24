@@ -267,6 +267,7 @@ When user's prompt is NOT in English:
 
 - **Masters**: `orchestrator`, `project-planner`, `security-auditor` (Cyber/Audit), `backend-specialist` (API/DB), `frontend-specialist` (UI/UX), `mobile-developer`, `debugger`, `game-developer`
 - **Key Skills**: `clean-code`, `brainstorming`, `app-builder`, `frontend-design`, `mobile-design`, `plan-writing`, `behavioral-modes`
+- **Stitch Skills**: `stitch-design`, `stitch-loop`, `design-md`, `enhance-prompt`, `react-components`, `remotion`, `shadcn-ui`, `taste-design`, `find-skills`
 
 ### Key Scripts
 

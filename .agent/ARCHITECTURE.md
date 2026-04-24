@@ -9,7 +9,7 @@
 Antigravity Kit is a modular system consisting of:
 
 - **20 Specialist Agents** - Role-based AI personas
-- **38 Skills** - Domain-specific knowledge modules
+- **47 Skills** - Domain-specific knowledge modules (38 core + 9 stitch)
 - **14 Workflows** - Slash command procedures
 
 ---
@@ -20,7 +20,7 @@ Antigravity Kit is a modular system consisting of:
 .agent/
 ├── ARCHITECTURE.md          # This file
 ├── agents/                  # 20 Specialist Agents
-├── skills/                  # 36 Skills
+├── skills/                  # 47 Skills
 ├── workflows/               # 11 Slash Commands
 ├── rules/                   # Global Rules
 └── scripts/                 # Master Validation Scripts
@@ -57,7 +57,7 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧩 Skills (38)
+## 🧩 Skills (47)
 
 Modular knowledge domains that agents can load on-demand. based on task context.
 
@@ -168,6 +168,20 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 | `performance-profiling`   | Web Vitals, optimization  |
 | `systematic-debugging`    | Troubleshooting           |
 
+### Stitch / Design (Google Stitch MCP)
+
+| Skill              | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| `stitch-design`    | Unified Stitch design - prompt, system, screen gen       |
+| `stitch-loop`      | Multi-page website from single prompt via Stitch         |
+| `design-md`        | Generate DESIGN.md from Stitch projects                  |
+| `enhance-prompt`   | Transform vague UI ideas into Stitch-optimized prompts   |
+| `react-components` | Convert Stitch screens to React component systems        |
+| `remotion`         | Walkthrough videos from Stitch projects via Remotion     |
+| `shadcn-ui`        | shadcn/ui component integration & best practices         |
+| `taste-design`     | Semantic design system for premium UI standards          |
+| `find-skills`      | Discover and install new agent skills from registries     |
+
 ---
 
 ## 🔄 Workflows (14)
@@ -272,7 +286,7 @@ For details, see [scripts/README.md](scripts/README.md)
 | Metric                    | Value                         |
 | ------------------------- | ----------------------------- |
 | **Total Agents**    | 20                            |
-| **Total Skills**    | 38                            |
+| **Total Skills**    | 47 (38 core + 9 stitch)       |
 | **Total Workflows** | 14                            |
 | **Total Scripts**   | 2 (master) + 18 (skill-level) |
 | **Coverage**        | ~90% web/mobile development   |
